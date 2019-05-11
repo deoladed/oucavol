@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_10_115243) do
+ActiveRecord::Schema.define(version: 2019_05_11_091424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "sites", force: :cascade do |t|
+    t.integer "suid"
+    t.integer "ffvl_id"
+    t.integer "number"
+    t.string "name"
+    t.string "surname"
+    t.string "zip"
+    t.string "city"
+    t.string "site_type"
+    t.string "upordown"
+    t.string "practice"
+    t.float "latitude"
+    t.float "longitude"
+    t.integer "altitude"
+    t.text "access"
+    t.integer "parking_distance"
+    t.integer "top_down_distance"
+    t.string "orientation"
+    t.string "favorable_wind"
+    t.string "unfavorable_wind"
+    t.text "ideal_conditions"
+    t.text "description"
+    t.text "restrictions"
+    t.string "air_region"
+    t.string "dangers"
+    t.integer "cross_number"
+    t.datetime "modification_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "handi"
+    t.string "balise"
+    t.string "webcam"
+    t.boolean "signaletique"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
